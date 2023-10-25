@@ -72,8 +72,9 @@ import './Style.css'
 // import FilterTitile from './mobx/Components/filterTitile';
 // import AllFilterData from './mobx/Components/allFilterData';
 // import AddToCart from './mobx/Components/AddToCart';
-import ListItem from './mobx/Components/ListItem';
-import CatagoryList from './mobx/Components/CatagoryList';
+// import ListItem from './mobx/Components/ListItem';
+// import CatagoryList from './mobx/Components/CatagoryList';
+import Favorite from './mobx/Components/Favorite';
 function App() {
   return (
     <div className="App">
@@ -88,7 +89,9 @@ function App() {
       {/* <AddToCart /> */}
       {/* <ListItem /> */}
 
-      <CatagoryList />
+      {/* <CatagoryList /> */}
+
+      <Favorite />
     
     </div>
   );

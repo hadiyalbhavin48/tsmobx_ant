@@ -578,6 +578,88 @@
 
 
 
+// import { action, computed, makeObservable, observable } from "mobx";
+// import axios from "axios";
+
+// export interface IStore {
+//   images: { label: string }[];   // //    {label: 'https://is1-ssl.mzstatic.com/image/thumb/Music125/…181-80993b8116c9/19UMGIM53909.rgb.jpg/55x55bb.png', attributes: {…}}
+//   titleData: { label: string };
+//   priceData: { label: string };
+//   releasedateData: { label: string };
+//   categoryData : {label: string}
+// }
+
+// class Store {
+//   userDetails: IStore[] = [];
+//   partialList: IStore[] = [];
+
+//   constructor() {
+//     makeObservable(this, {
+//       userDetails: observable,
+//       partialList: observable,
+//       getuserDetials: computed,
+//       getPartialList: computed,
+//       fetchUser: action,
+//       addToPartialList: action,
+//       removeFromPartialList: action,
+//     });
+//   }
+
+//   async fetchUser() {
+//     try {
+//       const userList = await axios.get("https://itunes.apple.com/us/rss/topalbums/limit=100/json");
+//       const resData = userList.data.feed.entry;
+//       console.log("resData " , resData);
+      
+
+//       const allData = resData.map((entry: any) => {
+//         const images = entry["im:image"].map((item: any) => ({ label: item.label }));
+//         const titleData = { label: entry.title.label };
+//         const priceData = { label: entry["im:price"].label };
+//         const releasedateData = { label: entry["im:releaseDate"].label };
+//         const categoryData = {label: entry.category.attributes.label}
+//         // console.log("categoryData " , categoryData);
+        
+//         return { images, titleData, priceData, releasedateData , categoryData };
+//       });
+
+//       this.userDetails = allData;
+//     } catch (error) {
+//       console.error("Error fetching data:", error);
+//     }
+//   }
+
+//   // Add a new action to add an item to the partialList
+//   addToPartialList(item: IStore) {
+//     this.partialList.push(item);
+//   }
+
+//   // Add a new action to remove an item from the partialList
+//   removeFromPartialList(item: IStore) {
+//     this.partialList = this.partialList.filter((i) => i.titleData.label !== item.titleData.label);
+//   }
+
+
+//   get getuserDetials() {
+//     return this.userDetails;
+//   }
+
+//   // Add a computed property to get the partialList
+//   get getPartialList() {
+//     return this.partialList;
+//   }
+// }
+
+// const store = new Store()
+// export default store;
+// // export default new Store();
+
+
+
+// ------------------------------------------------
+
+
+
 import { action, computed, makeObservable, observable } from "mobx";
 import axios from "axios";
 
